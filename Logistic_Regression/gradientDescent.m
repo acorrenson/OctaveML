@@ -1,4 +1,7 @@
 
+% === INIT ===
+close all; clc; clear;
+
 load('data2.txt');
 
 X = [ones(size(data2, 1), 1), data2(:, 1:2)];
@@ -31,7 +34,7 @@ t2 = zeros(3, 1);
 t3 = zeros(3, 1);
 
 a = 1;
-m = size(data, 1);
+m = size(data2, 1);
 
 y1 = dataSet(y, 0);
 y2 = dataSet(y, 1);
@@ -47,9 +50,11 @@ for i=1:iter
 endfor
 
 
-disp(Predict(X, t2));
-
-plot(X(:, 2), X(:, 3), "xr", "Markersize", 10);
+plot(X(1:3, 2), X(1:3, 3), "xr", "Markersize", 10);
+hold on;
+plot(X(4:6, 2), X(4:6, 3), "ob", "Markersize", 10);
+hold on;
+plot(X(7:9, 2), X(7:9, 3), "+g", "Markersize", 10);
 hold on;
 
 x = [1 10];
