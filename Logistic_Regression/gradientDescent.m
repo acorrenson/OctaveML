@@ -37,11 +37,17 @@ function r = sig(z)
 endfunction
 
 % predict the class for any input
-% -- t = t1 -> probability to belong to class 1
-% -- t = t2 -> probability to belong to class 2
-% -- t = t3 -> probability to belong to class 3
+% -- t = t1 -> "probability to belong to class 1" | p(y = 0)
+% -- t = t2 -> "probability to belong to class 2" | p(y = 1)
+% -- t = t3 -> "probability to belong to class 3" | p(y = 2)
+% t can be a matrix of vectors:
+% Predict(input, [t1, t2, t3])
+% ans = 
+%   p(y = 0)
+%   p(y = 1)
+%   p(y = 2)
 function p = Predict(X, t)
-  p = sig(X*t);
+  p = sig(X*t)';
 endfunction
 
 % === LEARNING ===
@@ -73,6 +79,8 @@ for i=1:iter
 endfor
 
 % === RESULT ===
+
+T = [t1, t2, t3];
 
 disp('Computed Theta for class 1 :');
 disp(t1); disp('');
