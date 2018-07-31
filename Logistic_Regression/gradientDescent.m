@@ -94,17 +94,17 @@ x = [-100 100];
 
 a = - t1(2) / t1(3);
 b = - t1(1) / t1(3);
-plot(x, a * x + b);
+plot(x, a * x + b, 'r');
 hold on;
 
 a = - t2(2) / t2(3);
 b = - t2(1) / t2(3);
-plot(x, a * x + b);
+plot(x, a * x + b, 'b');
 hold on;
 
 a = - t3(2) / t3(3);
 b = - t3(1) / t3(3);
-plot(x, a * x + b);
+plot(x, a * x + b, 'g');
 hold on;
 
 axis([0, 12, 0, 20]);
