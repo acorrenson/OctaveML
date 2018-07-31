@@ -1,2 +1,2 @@
 # OctaveML
-Machine learninig with GNU Octave
+Machine learning with GNU Octave
