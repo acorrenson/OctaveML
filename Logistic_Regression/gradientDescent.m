@@ -2,6 +2,7 @@
 % name: gradientDescent.m
 % author: Arthur Correnson
 % mail: <arthur.correnson@gmail.com>
+% license: MIT
 % ===================================
 
 % === INIT ===
