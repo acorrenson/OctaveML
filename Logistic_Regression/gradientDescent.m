@@ -69,6 +69,7 @@ y3 = labelsForClass(y, 2);
 % number of iterations
 iter = 1000;
 
+disp('running gradientDescent...');
 for i=1:iter
   % gradient descent for class 1
   t1 = t1 - (a/m) .* (X' * (sig(X*t1) - y1));
@@ -77,6 +78,7 @@ for i=1:iter
   % gradient descent for class 3
   t3 = t3 - (a/m) .* (X' * (sig(X*t3) - y3));
 endfor
+disp('...done');
 
 % === RESULT ===
 

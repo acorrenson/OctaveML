@@ -1,0 +1,21 @@
+# Created by Octave 4.2.2, Sun Aug 05 10:10:37 2018 CEST <arthur@pc44.home>
+# name: a
+# type: scalar
+1
+
+
+# name: ans
+# type: sq_string
+# elements: 1
+# length: 58
+/home/arthur/Documents/Github/OctaveML/Logistic_Regression
+
+
+# name: dataSphere
+# type: matrix
+# rows: 2
+# columns: 2
+ 0 0
+ 1 1
+
+
