@@ -68,9 +68,7 @@ hold on;
 
 l = 20;
 
-u = linspace(-5, 5, l);
-v = linspace(-5, 5, l);
-w = linspace(-5, 5, l);
+u = v = w = linspace(-5, 5, l);
 
 score = zeros(l .^ 3, 4);
 index = 0;
@@ -79,17 +77,10 @@ for i = 1:l
   for j = 1:l
     for k = 1:l
       index = index + 1;
-      a = t(1);
-      b = t(2);
-      c = t(3);
-      d = t(4);
-      e = t(5);
-      f = t(6);
-      g = t(7);
       px = u(i);
       py = v(j);
       pz = w(k);
-      r = a + b*px + c*py + d*pz + e*px.^2 + f*py.^2 + g*pz.^2;
+      r = mapFeatures([px, py, pz]) * t;
       score(index, 4) = r;
       score(index, 1) = u(i);
       score(index, 2) = v(j);
@@ -98,7 +89,10 @@ for i = 1:l
   end
 end
 
-finalScore = find(ceil(score(:,4)) == 0);
+% keep only the points that satisfy
+% the equation X*theta = 0 or : 
+% ax + by + cz + ex² + fy² + gz² + h = 0
+finalScore = find(ceil(score(:, 4)) == 0);
 
 finalX = score(finalScore, 1);
 finalY = score(finalScore, 2);
@@ -106,5 +100,4 @@ finalZ = score(finalScore, 3);
 
 plot3(finalX, finalY, finalZ, '.k', 'MarkerSize', 2);
 
-%axis([-5 5 -5 5 -5 5]);
 
